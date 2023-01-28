@@ -94,6 +94,10 @@
         $(this).removeClass("floating-label-form-group-with-focus");
       });
     });
+
+    $.getJSON("https://api.countapi.xyz/hit/sandylukita.com/key", function(response) {
+    $("#counter").text(response.value);
+});
   
   })(jQuery); // End of use strict
   
