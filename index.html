@@ -46,7 +46,7 @@
                 </div>
                 <!-- Masthead Subheading-->
                 <p><span class="typed pre-wrap masthead-subheading font-weight-light mb-0" data-typed-items="Support Engineer, Cloud Engineer, Programmer, Father"></span></p>
-                <small>This page has been viewed <a id="counter"></a> times</small>         
+                <small>This page has been viewed <a id="visitor_counter"></a> times</small>         
             </div>
         </header>
 
@@ -431,10 +431,14 @@
                     </div>
                 </div>
             </div>
+
+            
+
         </footer>
         <!-- Copyright Section-->
         <section class="copyright py-4 text-center text-white">
             <div class="container"><small class="pre-wrap">Copyright © My Portfolio 2023</small></div>
+            <span id="visitor_counter"> </span>
         </section>
         <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
         <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
@@ -452,5 +456,15 @@
 
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <!-- Get Counter from AWS API-->
+        <script>
+            fetch('https://ssv2zq0r84.execute-api.ap-southeast-1.amazonaws.com/default/getVisitorCounter')
+            .then(response => response.json())
+            .then((data) => {
+            document.getElementById('visitor_counter').innerText = data.Count
+            })
+        </script>
+
     </body>
 </html>
