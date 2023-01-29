@@ -95,7 +95,10 @@
       });
     });
 
-    $.getJSON("https://api.countapi.xyz/hit/sandylukita.com/key", function(response) {
+    // $.getJSON("https://api.countapi.xyz/hit/sandylukita.com/key", function(response) {
+    // $("#counter").text(response.value);
+
+    $.getJSON("https://2gxrpyecu4.execute-api.ap-southeast-1.amazonaws.com/default", function(response) {
     $("#counter").text(response.value);
 });
   
